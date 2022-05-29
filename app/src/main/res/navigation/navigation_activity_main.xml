@@ -2,11 +2,25 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/navigation_activity_main.xml"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/item_login">
 
     <fragment
-        android:id="@+id/homeFragment"
-        android:name=""
-        android:label="Achievement"/>
+        android:id="@+id/item_splash"
+        android:name="com.buyin.dalili.features.splash.presentation.SplashFragment"
+        android:label="Splash" />
+    <fragment
+        android:id="@+id/item_create_account"
+        android:name="com.buyin.dalili.features.auth.createaccount.presentation.CreateAccountFragment"
+        android:label="Auth" />
+
+    <fragment
+        android:id="@+id/item_material"
+        android:name="com.buyin.dalili.features.home.presentation.MaterialFragment"
+        android:label="Material" />
+    <fragment
+        android:id="@+id/item_login"
+        android:name="com.buyin.dalili.features.auth.login.presentation.LoginFragment"
+        android:label="Login " />
+
 
 </navigation>

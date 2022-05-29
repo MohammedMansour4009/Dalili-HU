@@ -1,4 +1,4 @@
-package com.buyin.dalili
+package com.buyin.dalili.features.main.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,6 +7,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
+import com.buyin.dalili.R
 import com.buyin.dalili.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
