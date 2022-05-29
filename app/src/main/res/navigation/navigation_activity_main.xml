@@ -22,5 +22,10 @@
         android:name="com.buyin.dalili.features.auth.login.presentation.LoginFragment"
         android:label="Login " />
 
+  <fragment
+        android:id="@+id/item_register"
+        android:name="com.buyin.dalili.features.auth.register.presentation.RegisterFragment"
+        android:label="Login " />
+
 
 </navigation>

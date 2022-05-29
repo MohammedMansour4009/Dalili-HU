@@ -36,7 +36,7 @@ class LoginFragment  : Fragment(){
     private fun initListener() {
         binding.textViewLabelCreateAccount.setOnClickListener {
             findNavController().navigate(
-                R.id.ir
+                R.id.item_register
             )
         }
     }
