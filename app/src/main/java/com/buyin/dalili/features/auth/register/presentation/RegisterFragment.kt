@@ -10,13 +10,16 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.buyin.dalili.R
 import com.buyin.dalili.databinding.FragmentLoginBinding
+import com.buyin.dalili.databinding.FragmentRegisterBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class RegisterFragment  : Fragment(){
 
-    private lateinit var binding: FragmentLoginBinding
+    private lateinit var binding: FragmentRegisterBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        binding = FragmentLoginBinding.inflate(inflater, container, false)
+        binding = FragmentRegisterBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -24,19 +27,19 @@ class RegisterFragment  : Fragment(){
         super.onViewCreated(view, savedInstanceState)
 
         initListener()
-        initView()
+//        initView()
     }
-
-    private fun initView() {
-        val content = SpannableString(getString(R.string.create_account))
-        content.setSpan(UnderlineSpan(), 0, content.length, 0)
-        binding.textViewLabelCreateAccount.text = content
-    }
+//
+//    private fun initView() {
+//        val content = SpannableString(getString(R.string.create_account))
+//        content.setSpan(UnderlineSpan(), 0, content.length, 0)
+//        binding.textViewLabelCreateAccount.text = content
+//    }
 
     private fun initListener() {
-        binding.textViewLabelCreateAccount.setOnClickListener {
+        binding.buttonRegister.setOnClickListener {
             findNavController().navigate(
-                R.id.item_register
+                R.id.item_college
             )
         }
     }
