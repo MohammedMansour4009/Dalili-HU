@@ -1,8 +1,8 @@
-package com.buyin.dalili.features.material.college.data
+package com.buyin.dalili.features.material.sources.data
 
 import android.util.Log
 import com.buyin.dalili.core.common.queryObserveChildEvent
-import com.buyin.dalili.features.material.college.domain.model.CollegeModel
+import com.buyin.dalili.features.material.sources.domain.model.SourcesModel
 import com.google.firebase.database.*
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
@@ -11,22 +11,25 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class CollegeDataSource @Inject constructor(
+class SourcesDataSource @Inject constructor(
     private val firebaseDatabase: FirebaseDatabase,
 ) {
 
-    fun getMaterial(): Flow<List<CollegeModel>> {
+    fun getSources(): Flow<List<SourcesModel>> {
         val query: Query = firebaseDatabase.reference
-            .child("feature/material/hu/")
+            .child("feature/material/hu/10/courses/100/sources")
+        Log.d("TAG000", "init Query ")
 
         query.get()
+        Log.d("TAG000", "get Query ")
 
         return query.queryObserveChildEvent().map { data ->
-            val chatList = ArrayList<CollegeModel>()
+            val chatList = ArrayList<SourcesModel>()
             data?.children?.forEach { child ->
-                val collegeModel = child.getValue(CollegeModel::class.java)
-                chatList.add(collegeModel!!)
+                val coursesModel = child.getValue(SourcesModel::class.java)
+                chatList.add(coursesModel!!)
             }
+            Log.d("TAG000", "response College post obse ")
             chatList
         }.catch {
 

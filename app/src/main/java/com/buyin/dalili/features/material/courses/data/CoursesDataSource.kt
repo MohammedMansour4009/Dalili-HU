@@ -2,9 +2,9 @@ package com.buyin.dalili.features.material.courses.data
 
 import android.util.Log
 import com.buyin.dalili.core.common.queryObserveChildEvent
-import com.buyin.dalili.features.material.college.domain.model.CollegeModel
 import com.buyin.dalili.features.material.courses.domain.model.CoursesModel
-import com.google.firebase.database.*
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.Query
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
@@ -25,7 +25,9 @@ class CoursesDataSource @Inject constructor(
         Log.d("TAG000", "get Query ")
 
         return query.queryObserveChildEvent().map { data ->
+
             val chatList = ArrayList<CoursesModel>()
+
             data?.children?.forEach { child ->
                 val coursesModel = child.getValue(CoursesModel::class.java)
                 chatList.add(coursesModel!!)

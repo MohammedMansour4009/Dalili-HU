@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item_college"
+        android:icon="@drawable/ic_college"
+        android:title="College" />
+    <item
+        android:id="@+id/item_bot"
+        android:icon="@drawable/ic_bot"
+        android:title="Bot" />
+    <item
+        android:id="@+id/item_losting"
+        android:icon="@drawable/ic_bag"
+        android:title="Lost" />
+
+    <item
+        android:id="@+id/item_map"
+        android:icon="@drawable/ic_map"
+        android:title="Map" />
+
+
+</menu>

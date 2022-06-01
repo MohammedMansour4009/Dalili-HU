@@ -25,6 +25,10 @@ class CollegeAdapter(
 
     override fun onBindViewHolder(holder: CollegeViewHolder, position: Int) {
         holder.bind(colleges[position])
+
+        holder.itemView.setOnClickListener {
+            onClick()
+        }
     }
 
     override fun getItemCount(): Int {

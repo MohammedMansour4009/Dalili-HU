@@ -7,7 +7,7 @@
 
         <variable
             name="model"
-            type="com.buyin.dalili.features.material.courses.domain.model.CoursesModel" />
+            type="com.buyin.dalili.features.material.sources.domain.model.SourcesModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

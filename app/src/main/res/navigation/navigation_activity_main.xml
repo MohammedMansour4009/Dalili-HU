@@ -2,17 +2,13 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/navigation_activity_main.xml"
-    app:startDestination="@id/item_college">
+    app:startDestination="@id/item_splash">
 
     <fragment
         android:id="@+id/item_splash"
         android:name="com.buyin.dalili.features.splash.presentation.SplashFragment"
         android:label="Splash" />
 
-    <fragment
-        android:id="@+id/item_material"
-        android:name="com.buyin.dalili.features.material.college.presentation.ui.CollegeFragment"
-        android:label="Material" />
     <fragment
         android:id="@+id/item_login"
         android:name="com.buyin.dalili.features.auth.login.presentation.LoginFragment"
@@ -26,7 +22,21 @@
     <fragment
         android:id="@+id/item_college"
         android:name="com.buyin.dalili.features.material.college.presentation.ui.CollegeFragment"
-        android:label="Login " />
+        android:label="College" />
+    <fragment
+        android:id="@+id/item_courses"
+        android:name="com.buyin.dalili.features.material.courses.presentation.ui.CoursesFragment"
+        android:label="Courses " />
+    <fragment
+        android:id="@+id/item_sources"
+        android:name="com.buyin.dalili.features.material.sources.presentation.ui.SourcesFragment"
+        android:label="Sources " />
+
+    <fragment
+        android:id="@+id/item_view_sources"
+        android:name="com.buyin.dalili.features.material.sources.presentation.ui.ViewSourcesFragment"
+        android:label="Courses "
+        />
 
 
 </navigation>
