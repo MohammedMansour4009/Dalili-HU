@@ -71,11 +71,10 @@ class RegisterFragment : Fragment() {
                     }
                 }
 
-
-
-                if (!isUserExist)
+                if (!isUserExist) {
                     viewModel.createAccount(account)
-
+                    findNavController().navigate(R.id.item_college)
+                }
 
             }
         }

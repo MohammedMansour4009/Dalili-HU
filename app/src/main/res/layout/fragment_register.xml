@@ -183,12 +183,11 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="50dp"
         android:layout_marginTop="50dp"
-        android:background="@drawable/button_background"
         android:paddingVertical="10dp"
         android:text="Create Account "
         android:textAllCaps="false"
         android:textColor="@color/on_primary"
-        android:theme="@style/AppTheme.Button"
+        android:background="@drawable/button_background"
         app:backgroundTint="@null"
         app:layout_constraintTop_toBottomOf="@id/text_view_error_pass" />
 
