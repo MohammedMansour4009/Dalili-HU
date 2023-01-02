@@ -11,7 +11,6 @@ import com.buyin.dalili.R
 import com.buyin.dalili.databinding.FragmentCoursesBinding
 import com.buyin.dalili.features.material.courses.domain.model.CoursesModel
 import com.buyin.dalili.features.material.courses.presentation.CoursesViewModel
-import com.google.firebase.FirebaseApp
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

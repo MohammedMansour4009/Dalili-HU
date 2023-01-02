@@ -59,5 +59,11 @@
         android:name="com.buyin.dalili.features.chat.presentation.ui.ChatFragment"
         android:label="Students Room" />
 
+    <fragment
+        android:id="@+id/missing_items"
+        android:name="com.buyin.dalili.features.material.missing.presentation.ui.MissingFragment"
+        android:label="MissingFragment" />
+
+
 
 </navigation>
