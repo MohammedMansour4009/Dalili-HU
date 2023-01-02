@@ -6,7 +6,6 @@ import com.buyin.dalili.features.auth.register.data.AccountModel
 import com.buyin.dalili.features.auth.register.domain.CreateAccountUseCase
 import com.buyin.dalili.features.auth.register.domain.GetTeacherUseCase
 import com.buyin.dalili.features.auth.register.domain.GetUsersUseCase
-import com.buyin.dalili.features.material.courses.domain.model.CoursesModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

@@ -37,6 +37,11 @@
         android:name="com.buyin.dalili.features.material.sources.presentation.ui.ViewSourcesFragment"
         android:label="Courses "
         />
+    <fragment
+        android:id="@+id/missing_items"
+        android:name="com.buyin.dalili.features.material.missing.presentation.ui.MissingFragment"
+        android:label="MissingFragment" />
+
 
 
 </navigation>

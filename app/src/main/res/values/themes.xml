@@ -33,11 +33,14 @@
         <item name="boxCornerRadiusTopEnd">15dp</item>
         <item name="boxCornerRadiusTopStart">15dp</item>
     </style>
-
     <style name="EditTextStyle" parent="ThemeOverlay.Material3.TextInputEditText">
         <item name="android:textSize">17sp</item>
         <item name="android:textColor">@color/primary_variant</item>
         <item name="hintTextColor">@color/hint_color</item>
     </style>
-
+    <style name="createPostButtonStyle" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">60dp</item>
+        <item name="colorOnBackground">@color/secondary_variant</item>
+    </style>
 </resources>
