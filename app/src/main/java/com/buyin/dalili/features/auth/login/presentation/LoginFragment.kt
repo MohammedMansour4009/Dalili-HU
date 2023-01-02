@@ -70,33 +70,36 @@ class LoginFragment : Fragment() {
 
     private fun initListener() {
         binding.buttonLogin.setOnClickListener {
-            if (isAllValid()) {
-                val account = AccountModel(
-                    password = binding.editTextPassword.text.toString(),
-                    university_id = binding.editTextId.text.toString(),
-                )
 
-//                var isTeacherExist = false
-//                teacher.forEach {
+
+           findNavController().navigate(R.id.missing_items)
+//            if (isAllValid()) {
+//                val account = AccountModel(
+//                    password = binding.editTextPassword.text.toString(),
+//                    university_id = binding.editTextId.text.toString(),
+//                )
+//
+////                var isTeacherExist = false
+////                teacher.forEach {
+////                    if (it.university_id == account.university_id) {
+////                        Toast.makeText(requireContext(), "isExist", Toast.LENGTH_LONG).show()
+////                        isTeacherExist = true
+////                    }
+////                }
+//
+//                users.forEach {
 //                    if (it.university_id == account.university_id) {
-//                        Toast.makeText(requireContext(), "isExist", Toast.LENGTH_LONG).show()
-//                        isTeacherExist = true
+//                        if (it.password == account.password)
+//                            findNavController().navigate(R.id.item_college)
+//                        else {
+//                            Toast.makeText(requireContext(), "password invalid", Toast.LENGTH_SHORT)
+//                                .show()
+//                        }
 //                    }
 //                }
-
-                users.forEach {
-                    if (it.university_id == account.university_id) {
-                        if (it.password == account.password)
-                            findNavController().navigate(R.id.item_college)
-                        else {
-                            Toast.makeText(requireContext(), "password invalid", Toast.LENGTH_SHORT)
-                                .show()
-                        }
-                    }
-                }
-
-
-            }
+//
+//
+//            }
         }
 
 

@@ -9,9 +9,9 @@
         android:icon="@drawable/ic_bot"
         android:title="Bot" />
     <item
-        android:id="@+id/item_losting"
+        android:id="@+id/item_missing"
         android:icon="@drawable/ic_bag"
-        android:title="Lost" />
+        android:title="Missing Items" />
 
     <item
         android:id="@+id/item_map"
