@@ -22,6 +22,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
     private lateinit var navController: NavController
     private lateinit var navHostFragment: NavHostFragment
     lateinit var appBarConfiguration: AppBarConfiguration
