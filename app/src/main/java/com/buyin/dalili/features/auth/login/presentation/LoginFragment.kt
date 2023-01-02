@@ -1,5 +1,7 @@
 package com.buyin.dalili.features.auth.login.presentation
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.style.UnderlineSpan
@@ -86,9 +88,10 @@ class LoginFragment : Fragment() {
 
                 users.forEach {
                     if (it.university_id == account.university_id) {
-                        if (it.password == account.password)
+                        if (it.password == account.password) {
                             findNavController().navigate(R.id.item_college)
-                        else {
+                            saveUserInfo(it.university_id)
+                        } else {
                             Toast.makeText(requireContext(), "password invalid", Toast.LENGTH_SHORT)
                                 .show()
                         }
@@ -105,6 +108,23 @@ class LoginFragment : Fragment() {
                 R.id.item_register
             )
         }
+
+
+        binding.textViewSkip.setOnClickListener {
+            findNavController().navigate(
+                R.id.item_college
+            )
+        }
+
+
+    }
+
+    private fun saveUserInfo(universityId: String?) {
+        val APP_PREF = "appPre"
+        val preferences: SharedPreferences =
+            requireContext().getSharedPreferences(APP_PREF, Context.MODE_PRIVATE)
+
+        preferences.edit().putString("universityId", universityId).apply()
     }
 
     private fun isAllValid(): Boolean {

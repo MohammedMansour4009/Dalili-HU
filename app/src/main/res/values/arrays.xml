@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="feelings">
+        <item>College of Medicine</item>
+        <item>College of Engineering</item>
+        <item>College of Applied Medical Sciences</item>
+        <item>College of Nursing</item>
+        <item>Queen Rania Faculty for Childhood</item>
+        <item>College of Pharmacy</item>
+        <item>College of Economics and Administrative Sciences</item>
+        <item>Faculty of Physical Education and Sports Sciences</item>
+        <item>IT collage</item>
+        <item>College of Education Sciences</item>
+        <item>College of Science</item>
+        <item>Language Center</item>
+        <item>College of Tourism</item>
+    </string-array>
+</resources>

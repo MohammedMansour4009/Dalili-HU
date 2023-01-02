@@ -1,5 +1,6 @@
 package com.buyin.dalili.features.auth.register.presentation
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -22,6 +23,7 @@ class RegisterFragment : Fragment() {
     private val viewModel: RegisterViewModel by viewModels()
 
 
+
     private var users = ArrayList<AccountModel>()
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,6 +38,16 @@ class RegisterFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initListener()
         initObserve()
+
+        val sharedpreferences =
+            requireActivity().getSharedPreferences("PREFS_NAME", Context.MODE_PRIVATE);
+        val editor = sharedpreferences.edit();
+        editor.putBoolean(
+            "key_name",
+            true
+        )
+        editor.apply(); // commit changes
+
     }
 
     private fun initObserve() {

@@ -18,5 +18,8 @@
         android:icon="@drawable/ic_map"
         android:title="Map" />
 
-
+    <item
+        android:id="@+id/item_study_room"
+        android:icon="@drawable/ic_students_room"
+        android:title="Room" />
 </menu>

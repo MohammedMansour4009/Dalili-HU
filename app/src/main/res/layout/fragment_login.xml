@@ -58,6 +58,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="top"
+            android:text="1933345"
             android:nextFocusDown="@+id/edit_text_phone" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -95,6 +96,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="top"
+            android:text="0795670069"
             android:inputType="numberPassword"
             android:nextFocusDown="@+id/edit_text_phone" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -124,10 +126,11 @@
         app:layout_constraintEnd_toEndOf="@id/text_input_password"
         app:layout_constraintStart_toStartOf="@id/text_input_password"
         app:layout_constraintBottom_toTopOf="@id/button_login"
-
+        android:layout_marginBottom="10dp"
         />
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_view_skip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=" Skip"

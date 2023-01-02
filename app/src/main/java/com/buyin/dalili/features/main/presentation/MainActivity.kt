@@ -74,11 +74,11 @@ class MainActivity : AppCompatActivity() {
                     binding.appBar.isVisible = false
 
                 }
-                R.id.item_college -> {
-                    supportActionBar?.hide()
-                    actionBar?.setDisplayHomeAsUpEnabled(false)
-                    binding.appBar.isVisible = true
-                }
+//                R.id.item_college -> {
+//                    supportActionBar?.hide()
+//                    actionBar?.setDisplayHomeAsUpEnabled(false)
+//                    binding.appBar.isVisible = true
+//                }
                 else -> {
                     binding.bottomNav.isVisible = true
                     binding.appBar.isVisible = true

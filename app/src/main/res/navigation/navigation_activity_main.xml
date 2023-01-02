@@ -35,8 +35,29 @@
     <fragment
         android:id="@+id/item_view_sources"
         android:name="com.buyin.dalili.features.material.sources.presentation.ui.ViewSourcesFragment"
-        android:label="Courses "
-        />
+        android:label="Courses " />
+
+
+    <fragment
+        android:id="@+id/item_map"
+        android:name="com.buyin.dalili.features.map.MapFragment"
+        android:label="Ma" />
+
+    <fragment
+        android:id="@+id/item_study_room"
+        android:name="com.buyin.dalili.features.room.presentation.ui.StudentsRoomFragment"
+        android:label="Students Room" />
+
+    <fragment
+        android:id="@+id/item_create_room_dialog"
+        android:name="com.buyin.dalili.features.room.presentation.ui.CreateRoomDialog"
+        android:label="Students Room" />
+
+
+    <fragment
+        android:id="@+id/item_chat"
+        android:name="com.buyin.dalili.features.chat.presentation.ui.ChatFragment"
+        android:label="Students Room" />
 
 
 </navigation>
