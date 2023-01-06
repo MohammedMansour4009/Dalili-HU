@@ -58,6 +58,7 @@ class ModifyFragment : Fragment() {
                 if (preferences.getString("password", "")
                         .toString() == binding.editTextPassword.text.toString()
                 ) {
+
                     saveData(
                         preferences.getString("userType", "")!!,
                         binding.editTextAdName.text.toString(),
