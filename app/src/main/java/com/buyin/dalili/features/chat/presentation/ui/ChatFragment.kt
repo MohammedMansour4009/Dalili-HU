@@ -11,7 +11,6 @@ import com.buyin.dalili.R
 import com.buyin.dalili.databinding.FragmentChatBinding
 import com.buyin.dalili.features.chat.domain.model.ChatModel
 import com.buyin.dalili.features.chat.presentation.ChatViewModel
-import com.buyin.dalili.features.room.presentation.ui.CreateRoomDialog
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -44,7 +43,12 @@ class ChatFragment : Fragment() {
     }
 
     private fun initListener() {
-
+        binding.buttonCreateMeeting.setOnClickListener {
+            CreatePostDialog(list.size, arguments?.getString("roomId")!!).show(
+                requireFragmentManager(),
+                ""
+            )
+        }
     }
 
     private fun initObserver() {

@@ -6,5 +6,6 @@
     <string name="google_maps_direction_link" translatable="false">http://maps.google.com/maps?saddr=&amp;daddr=%1$s,%2$s</string>
     <string name="choose_the_college_you_want_to_go_to">Choose the college you \n want to go to</string>
     <string name="going_to">going to</string>
+    <string name="create_post">Create Post</string>
 
 </resources>

@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
+import androidx.core.view.GravityCompat
 import androidx.core.view.isVisible
 import androidx.navigation.NavController
 import androidx.navigation.NavOptions
@@ -44,6 +45,13 @@ class MainActivity : AppCompatActivity() {
         setToolbar()
         setupNavBottom()
         setNavBottomAndDrawerNav()
+        initListener()
+    }
+
+    private fun initListener() {
+        binding.toolbarMain.setNavigationOnClickListener {
+            openDrawer()
+        }
     }
 
     private fun setNavBottomAndDrawerNav() {
@@ -70,6 +78,17 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(this, navController, appBarConfiguration)
     }
 
+
+
+    fun openDrawer() {
+        val drawer = binding.drawerLayout
+        drawer.openDrawer(GravityCompat.START)
+    }
+
+    private fun hideDrawer() {
+        val drawer = binding.drawerLayout
+        drawer.close()
+    }
 
     private fun setupNavBottom() {
         navController.addOnDestinationChangedListener { _, destination, _ ->

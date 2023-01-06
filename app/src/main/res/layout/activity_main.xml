@@ -102,7 +102,7 @@
             android:fitsSystemWindows="true"
             android:paddingBottom="10dp"
             app:headerLayout="@layout/activity_for_drawer"
-            app:menu="@menu/bottom_menu" />
+            app:menu="@menu/side_menu" />
     </androidx.drawerlayout.widget.DrawerLayout>
 
 </layout>

@@ -20,12 +20,6 @@ class ChatDataSource @Inject constructor(
     ) {
 
     fun getChat(roomId: String): Flow<List<ChatModel>> {
-        addChatModel(ChatModel(
-            0,
-            "mohmmed",
-            "test  message ",
-            "232",
-        ))
         val query: Query = firebaseDatabase.reference
             .child("feature/Room/hu/${roomId}/chat")
 

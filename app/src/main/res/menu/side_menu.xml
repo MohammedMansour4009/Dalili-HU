@@ -24,4 +24,10 @@
         android:title="Room" />
 
 
+    <item
+        android:id="@+id/item_login"
+        android:icon="@drawable/ic_logout"
+        android:title="Logout" />
+
+
 </menu>
