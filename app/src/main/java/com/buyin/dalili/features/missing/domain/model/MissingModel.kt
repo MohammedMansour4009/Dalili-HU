@@ -1,4 +1,4 @@
-package com.buyin.dalili.features.material.missing.domain.model
+package com.buyin.dalili.features.missing.domain.model
 
 data class MissingModel(
 

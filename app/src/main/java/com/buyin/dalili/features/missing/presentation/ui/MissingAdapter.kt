@@ -1,10 +1,15 @@
-package com.buyin.dalili.features.material.missing.presentation.ui
+package com.buyin.dalili.features.missing.presentation.ui
 
+import android.content.Intent
+import android.net.Uri
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.buyin.dalili.databinding.RowMissingBinding
-import com.buyin.dalili.features.material.missing.domain.model.MissingModel
+import com.buyin.dalili.features.missing.domain.model.MissingModel
+
 
 class MissingAdapter(
     private val items: List<MissingModel>
@@ -32,9 +37,13 @@ class MissingAdapter(
 
     class MissingViewHolder(private val binding: RowMissingBinding) :
         RecyclerView.ViewHolder(binding.root) {
-
         fun bind(model: MissingModel) {
             binding.model = model
+            binding.contactBtn.setOnClickListener{
+                Log.d("TAG111", "${binding?.model?.phone}")
+                val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + "${binding?.model?.phone}"))
+                binding.contactBtn.context.startActivity(intent)
+            }
         }
     }
 }

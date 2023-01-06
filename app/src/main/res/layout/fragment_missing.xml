@@ -38,11 +38,23 @@
                     android:layout_margin="25dp"
                     android:background="@color/white"
                     android:gravity="center_vertical"
-                    android:hint="Missing item description"
+                    android:hint="Lost item description"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/text_view_error_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    android:text="* Missing description"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/edit_text_id"
+                    tools:visibility="invisible" />
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/appCompatImageView"
                     android:layout_width="20dp"
@@ -60,7 +72,7 @@
                     android:layout_marginStart="5dp"
                     android:layout_marginBottom="16dp"
                     android:background="@color/white"
-                    android:hint=" 07XXXXXXXX"
+                    android:hint="07XXXXXXXX"
                     android:inputType="phone"
                     android:textSize="15sp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -70,9 +82,9 @@
                     android:id="@+id/text_view_error_phone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
+                    android:layout_marginStart="2dp"
                     android:layout_marginBottom="16dp"
-                    android:text="Pattern Invalid"
+                    android:text="* Pattern Invalid"
                     android:textColor="@android:color/holo_red_dark"
                     android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -112,7 +124,6 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/post_id"
-
             app:layout_constraintVertical_bias="0.0"
             tools:layout_editor_absoluteX="4dp"
             tools:listitem="@layout/row_missing" />

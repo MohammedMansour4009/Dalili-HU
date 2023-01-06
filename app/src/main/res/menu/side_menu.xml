@@ -23,7 +23,10 @@
         android:icon="@drawable/ic_students_room"
         android:title="Room" />
 
-
+    <item
+        android:id="@+id/item_modify"
+        android:icon="@drawable/modify_account"
+        android:title="Modify Account" />
     <item
         android:id="@+id/item_login"
         android:icon="@drawable/ic_logout"

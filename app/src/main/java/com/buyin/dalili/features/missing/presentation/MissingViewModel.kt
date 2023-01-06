@@ -1,9 +1,9 @@
-package com.buyin.dalili.features.material.missing.presentation
+package com.buyin.dalili.features.missing.presentation
 
 import android.util.Log
 import androidx.lifecycle.*
-import com.buyin.dalili.features.material.missing.domain.model.MissingModel
-import com.buyin.dalili.features.material.missing.domain.usecase.GetMissingUseCase
+import com.buyin.dalili.features.missing.domain.model.MissingModel
+import com.buyin.dalili.features.missing.domain.usecase.GetMissingUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

@@ -6,11 +6,13 @@ import android.os.Build
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.style.UnderlineSpan
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.Toast
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
@@ -93,14 +95,13 @@ class LoginFragment : Fragment() {
                     if (it.university_id == account.university_id) {
                         if (it.password == account.password) {
                             findNavController().navigate(R.id.item_college)
-                            saveUserInfo(it.university_id,it.name)
+                            saveUserInfo(it.university_id,it.name,account.password,"student")
                         } else {
                             Toast.makeText(requireContext(), "password invalid", Toast.LENGTH_SHORT)
                                 .show()
                         }
                     }
                 }
-
 
             }
         }
@@ -122,13 +123,14 @@ class LoginFragment : Fragment() {
 
     }
 
-    private fun saveUserInfo(universityId: String?, name: String?) {
-        val APP_PREF = "appPre"
+    private fun saveUserInfo(universityId: String?, name: String?,password:String?,userType:String?) {
         val preferences: SharedPreferences =
-            requireContext().getSharedPreferences(APP_PREF, Context.MODE_PRIVATE)
-
+            requireContext().getSharedPreferences("appPre", Context.MODE_PRIVATE)
         preferences.edit().putString("universityId", universityId).apply()
         preferences.edit().putString("name", name).apply()
+        preferences.edit().putString("password",password).apply()
+        preferences.edit().putString("userType",userType).apply()
+
     }
 
     private fun isAllValid(): Boolean {

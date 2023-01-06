@@ -61,9 +61,11 @@
 
     <fragment
         android:id="@+id/missing_items"
-        android:name="com.buyin.dalili.features.material.missing.presentation.ui.MissingFragment"
+        android:name="com.buyin.dalili.features.missing.presentation.ui.MissingFragment"
         android:label="MissingFragment" />
-
-
+  <fragment
+      android:id="@+id/item_modify"
+      android:name="com.buyin.dalili.features.modify.presentation.ModifyFragment"
+      android:label="Modify Account" />
 
 </navigation>
