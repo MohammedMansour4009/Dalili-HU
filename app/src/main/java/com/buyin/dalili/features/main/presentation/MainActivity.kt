@@ -99,7 +99,12 @@ class MainActivity : AppCompatActivity() {
                     binding.appBar.isVisible = false
 
                 }
+                R.id.items_permission->{
+                    binding.toolbarMain.isVisible  = false
+                    binding.bottomNav.isVisible  = false
+                }
                 else -> {
+                    binding.toolbarMain.isVisible  = true
                     binding.bottomNav.isVisible = true
                     binding.appBar.isVisible = true
                     supportActionBar?.hide()

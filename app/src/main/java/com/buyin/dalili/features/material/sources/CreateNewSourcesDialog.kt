@@ -1,4 +1,4 @@
-package com.buyin.dalili.features.room.presentation.ui
+package com.buyin.dalili.features.material.sources
 
 import android.app.AlertDialog
 import android.app.Dialog
@@ -8,20 +8,21 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatDialogFragment
 import androidx.fragment.app.viewModels
 import com.buyin.dalili.databinding.InfoCreateRoomBinding
-import com.buyin.dalili.features.room.domain.model.StudentsRoomModel
-import com.buyin.dalili.features.room.presentation.StudentsRoomViewModel
+import com.buyin.dalili.databinding.InfoCreateSourcesBinding
+import com.buyin.dalili.features.material.sources.domain.model.SourcesModel
+import com.buyin.dalili.features.material.sources.presentation.SourcesViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class CreateRoomDialog(val list: List<StudentsRoomModel>) : AppCompatDialogFragment() {
+class CreateNewSourcesDialog(val listSize: Int) : AppCompatDialogFragment() {
 
-    private lateinit var binding: InfoCreateRoomBinding
-    private val viewModel: StudentsRoomViewModel by viewModels()
+    private lateinit var binding: InfoCreateSourcesBinding
 
+    private val viewModel: SourcesViewModel by viewModels()
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         isCancelable = false
-        binding = InfoCreateRoomBinding.inflate(requireActivity().layoutInflater, null, false)
+        binding = InfoCreateSourcesBinding.inflate(requireActivity().layoutInflater, null, false)
         val builder = AlertDialog.Builder(activity)
         builder.setView(binding.root)
         listener()
@@ -45,16 +46,14 @@ class CreateRoomDialog(val list: List<StudentsRoomModel>) : AppCompatDialogFragm
          val preferences: SharedPreferences = requireContext().getSharedPreferences(APP_PREF, Context.MODE_PRIVATE)
 
         binding.btnAdd.setOnClickListener {
-            if (binding.etRoomName.text?.isEmpty() == true) {
-                binding.etRoomName.error = "Please enter name "
+            if (binding.etName.text?.isEmpty() == true) {
+                binding.etName.error = "Please enter name "
             } else {
-                viewModel.addStudentsRoom(
-                    StudentsRoomModel(
-                        list.size,
-                        binding.etRoomName.text.toString(),
-                        getImages(list.size),
-                        "Creator By " + binding.etCreator.text.toString(),
-                        preferences.getString("universityId", "test")
+                viewModel.addSources(
+                    SourcesModel(
+                        listSize,
+                        name = binding.etName.text.toString(),
+                        url = binding.etUrl.text.toString()
                     )
                 )
                 dismiss()

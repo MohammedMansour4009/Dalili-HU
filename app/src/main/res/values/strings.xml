@@ -7,5 +7,7 @@
     <string name="choose_the_college_you_want_to_go_to">Choose the college you \n want to go to</string>
     <string name="going_to">going to</string>
     <string name="create_post">Create Post</string>
+    <string name="permission_request_is_under_review">Permission request is under review</string>
+    <string name="permission_request_accepted">Permission request accepted</string>
 
 </resources>

@@ -16,9 +16,17 @@ class RegisterDataSource @Inject constructor(
 ) {
 
     fun createAccount(accountModel: AccountModel):Boolean{
+        if (accountModel.isTeacher==true) {
+            firebaseDatabase.getReference("User/teacher")
+                .child(accountModel.university_id.toString())
+                .setValue(accountModel)
 
-        firebaseDatabase.getReference("User/student").child(accountModel.university_id.toString())
-            .setValue(accountModel)
+        } else {
+            firebaseDatabase.getReference("User/student")
+                .child(accountModel.university_id.toString())
+                .setValue(accountModel)
+        }
+
 
         return true
     }

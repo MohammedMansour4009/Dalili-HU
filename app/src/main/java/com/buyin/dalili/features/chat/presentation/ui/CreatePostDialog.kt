@@ -24,7 +24,6 @@ class CreatePostDialog(val listSize: Int, val roomId: String) : AppCompatDialogF
         binding = InfoPostRoomBinding.inflate(requireActivity().layoutInflater, null, false)
         val builder = AlertDialog.Builder(activity)
         builder.setView(binding.root)
-            .setTitle("write your info ")
         listener()
 
         return builder.create()

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -41,8 +42,11 @@ class CoursesFragment : Fragment() {
 
     private fun successGetCourses(list: List<CoursesModel>?) {
         if (list != null) {
-            val adapter = CoursesAdapter(list){
-                findNavController().navigate(R.id.item_sources)
+            val adapter = CoursesAdapter(list) {
+                findNavController().navigate(
+                    R.id.item_sources,
+                    bundleOf("id" to it.ID)
+                )
             }
             binding.recyclerView.adapter = adapter
         }

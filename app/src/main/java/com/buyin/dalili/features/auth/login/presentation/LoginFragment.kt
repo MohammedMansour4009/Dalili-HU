@@ -2,16 +2,13 @@ package com.buyin.dalili.features.auth.login.presentation
 
 import android.content.Context
 import android.content.SharedPreferences
-import android.os.Build
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.style.UnderlineSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.WindowManager
 import android.widget.Toast
-import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -93,7 +90,7 @@ class LoginFragment : Fragment() {
                     if (it.university_id == account.university_id) {
                         if (it.password == account.password) {
                             findNavController().navigate(R.id.item_college)
-                            saveUserInfo(it.university_id,it.name)
+                            saveUserInfo(it)
                         } else {
                             Toast.makeText(requireContext(), "password invalid", Toast.LENGTH_SHORT)
                                 .show()
@@ -113,22 +110,16 @@ class LoginFragment : Fragment() {
         }
 
 
-        binding.textViewSkip.setOnClickListener {
-            findNavController().navigate(
-                R.id.item_college
-            )
-        }
-
-
     }
 
-    private fun saveUserInfo(universityId: String?, name: String?) {
+    private fun saveUserInfo(model: AccountModel) {
         val APP_PREF = "appPre"
         val preferences: SharedPreferences =
             requireContext().getSharedPreferences(APP_PREF, Context.MODE_PRIVATE)
 
-        preferences.edit().putString("universityId", universityId).apply()
-        preferences.edit().putString("name", name).apply()
+        preferences.edit().putString("universityId", model.university_id).apply()
+        preferences.edit().putString("name", model.name).apply()
+        preferences.edit().putBoolean("isTeacher", model.isTeacher == true).apply()
     }
 
     private fun isAllValid(): Boolean {

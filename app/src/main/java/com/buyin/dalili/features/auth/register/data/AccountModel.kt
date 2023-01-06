@@ -8,7 +8,9 @@ data class AccountModel(
 
     val university_id: String? = null,
 
-    val isTeacher: Boolean = false
+    val isTeacher: Boolean? = false,
+
+    val permission: Boolean? = false,
 
 
-)
+    )

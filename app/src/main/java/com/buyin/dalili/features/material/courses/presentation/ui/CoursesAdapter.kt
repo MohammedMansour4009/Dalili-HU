@@ -8,7 +8,7 @@ import com.buyin.dalili.features.material.courses.domain.model.CoursesModel
 
 class CoursesAdapter(
     private val colleges: List<CoursesModel>,
-    private val onClick:()-> Unit
+    private val onClick:(CoursesModel)-> Unit
     ) : RecyclerView.Adapter<CoursesAdapter.CollegeViewHolder>() {
 
     private lateinit var layoutInflater: LayoutInflater
@@ -25,7 +25,7 @@ class CoursesAdapter(
     override fun onBindViewHolder(holder: CollegeViewHolder, position: Int) {
         holder.bind(colleges[position])
         holder.itemView.setOnClickListener {
-            onClick()
+            onClick(colleges[position])
         }
     }
 

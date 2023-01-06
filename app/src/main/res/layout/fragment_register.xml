@@ -78,7 +78,7 @@
         android:id="@+id/checkbox_is_teacher"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Is Teacher"
+        android:text="Teacher"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@id/text_view_error_name"
         app:layout_constraintTop_toBottomOf="@id/text_view_error_name" />
@@ -164,28 +164,28 @@
 
 
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/text_view_label_skip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="You can skip login :"
-        android:textColor="@color/black"
-        android:textStyle="normal"
-        app:layout_constraintEnd_toEndOf="@id/text_input_name"
-        app:layout_constraintStart_toStartOf="@id/text_input_name"
-        app:layout_constraintTop_toBottomOf="@id/button_register" />
+<!--    <androidx.appcompat.widget.AppCompatTextView-->
+<!--        android:id="@+id/text_view_label_skip"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:text="You can skip login :"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textStyle="normal"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/text_input_name"-->
+<!--        app:layout_constraintStart_toStartOf="@id/text_input_name"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/button_register" />-->
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/text_view_skip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text=" Skip"
-        android:textColor="@color/primary"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/text_view_label_skip"
-        app:layout_constraintTop_toBottomOf="@id/button_register" />
+<!--    <androidx.appcompat.widget.AppCompatTextView-->
+<!--        android:id="@+id/text_view_skip"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:text=" Skip"-->
+<!--        android:textColor="@color/primary"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintStart_toEndOf="@id/text_view_label_skip"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/button_register" />-->
 
 
     <Button

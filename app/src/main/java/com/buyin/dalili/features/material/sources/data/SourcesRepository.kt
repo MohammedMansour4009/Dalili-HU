@@ -13,6 +13,10 @@ class SourcesRepository @Inject constructor(
    fun getSources(): Flow<List<SourcesModel>> {
         return dataSource.getSources()
     }
+
+    fun addSources(model: SourcesModel) {
+        return dataSource.addSources(model)
+    }
 }
 
 

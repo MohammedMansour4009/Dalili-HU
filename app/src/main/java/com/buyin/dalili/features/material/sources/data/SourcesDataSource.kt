@@ -2,6 +2,7 @@ package com.buyin.dalili.features.material.sources.data
 
 import android.util.Log
 import com.buyin.dalili.core.common.queryObserveChildEvent
+import com.buyin.dalili.features.chat.domain.model.ChatModel
 import com.buyin.dalili.features.material.sources.domain.model.SourcesModel
 import com.google.firebase.database.*
 import kotlinx.coroutines.flow.Flow
@@ -13,7 +14,8 @@ import javax.inject.Singleton
 @Singleton
 class SourcesDataSource @Inject constructor(
     private val firebaseDatabase: FirebaseDatabase,
-) {
+    private val databaseReference: DatabaseReference,
+    ) {
 
     fun getSources(): Flow<List<SourcesModel>> {
         val query: Query = firebaseDatabase.reference
@@ -35,6 +37,16 @@ class SourcesDataSource @Inject constructor(
 
             Log.d("TAG000 ", "error Query = ${it.message}")
         }
+    }
+
+    fun addSources(model: SourcesModel) {
+        databaseReference.child("feature/material/hu/10/courses/100/sources").push().setValue(model)
+            .addOnSuccessListener {
+                Log.d("TAG00", "addItem: ")
+            }.addOnFailureListener {
+                Log.d("TAG00", "E: =${it.message.toString()}  ")
+            }
+
     }
 
 

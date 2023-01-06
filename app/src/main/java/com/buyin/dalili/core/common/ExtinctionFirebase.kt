@@ -32,6 +32,46 @@ fun Query.queryObserveChildEvent(): Flow<DataSnapshot?> {
 
 
 
+fun DatabaseReference.singleChildEvent(): Flow<DataSnapshot?> {
+    return callbackFlow {
+        val listener = object : ValueEventListener {
+            override fun onCancelled(error: DatabaseError) {
+                close(error.toException())
+            }
+
+            override fun onDataChange(snapshot: DataSnapshot) {
+                this@callbackFlow.trySend(snapshot).isSuccess
+            }
+        }
+        addListenerForSingleValueEvent(listener)
+        awaitClose { removeEventListener(listener) }
+    }
+}
+
+
+suspend fun DatabaseReference.awaitsSingle(): DataSnapshot? =
+
+    suspendCancellableCoroutine { continuation ->
+        val listener = object : ValueEventListener {
+            override fun onCancelled(error: DatabaseError) {
+                val exception = when (error.toException()) {
+                    is FirebaseException -> error.toException()
+                    else -> Exception("The Firebase call for reference $this was cancelled")
+                }
+                continuation.resumeWithException(exception)
+            }
+
+            override fun onDataChange(snapshot: DataSnapshot) {
+                try {
+                    continuation.resume(snapshot)
+                } catch (exception: Exception) {
+                    continuation.resumeWithException(exception)
+                }
+            }
+        }
+        continuation.invokeOnCancellation { this.removeEventListener(listener) }
+        this.addListenerForSingleValueEvent(listener)
+    }
 
 
 

@@ -1,11 +1,13 @@
 package com.buyin.dalili.features.auth.register.presentation
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -72,10 +74,9 @@ class RegisterFragment : Fragment() {
                     name = binding.editTextAdName.text.toString(),
                     password = binding.editTextPassword.text.toString(),
                     university_id = binding.editTextUniversity.text.toString(),
-
+                    isTeacher = binding.checkboxIsTeacher.isChecked
                 )
                 var isUserExist = false
-                var isTeacherExist = false
 
                 users.forEach {
                     if (it.university_id == account.university_id) {
@@ -86,17 +87,22 @@ class RegisterFragment : Fragment() {
 
                 if (!isUserExist) {
                     viewModel.createAccount(account)
-                    findNavController().navigate(R.id.item_college)
+                    if (binding.checkboxIsTeacher.isChecked) {
+                        saveUserInfo(account)
+                        findNavController().navigate(
+                            R.id.items_permission,
+                            bundleOf("teacherId" to account.university_id)
+                        )
+
+                    } else {
+                        saveUserInfo(account)
+                        findNavController().navigate(R.id.item_college)
+                    }
                 }
 
             }
         }
 
-        binding.textViewSkip.setOnClickListener {
-            findNavController().navigate(
-                R.id.item_college
-            )
-        }
     }
 
     private fun isAllValid(): Boolean {
@@ -124,6 +130,16 @@ class RegisterFragment : Fragment() {
         }
 
         return isValid
+    }
+
+    private fun saveUserInfo(model: AccountModel) {
+        val APP_PREF = "appPre"
+        val preferences: SharedPreferences =
+            requireContext().getSharedPreferences(APP_PREF, Context.MODE_PRIVATE)
+
+        preferences.edit().putString("universityId", model.university_id).apply()
+        preferences.edit().putString("name", model.name).apply()
+        preferences.edit().putBoolean("isTeacher", binding.checkboxIsTeacher.isChecked).apply()
     }
 
     private fun onCilkButtonRegister() {
