@@ -1,9 +1,11 @@
 package com.buyin.dalili.features.splash.presentation
 
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -21,11 +23,15 @@ class SplashFragment : Fragment() {
         super.onCreate(savedInstanceState)
         lifecycleScope.launch {
             delay(2000)
-            binding.progressBar.isVisible = false
-            binding.imageViewCheck.isVisible = true
-            binding.imageViewCircleCheck.isVisible = true
-            delay(1000)
-            findNavController().navigate(R.id.item_login)
+//            binding.progressBar.isVisible = false
+//            binding.imageViewCheck.isVisible = true
+//            binding.imageViewCircleCheck.isVisible = true
+            var logo=binding.imageViewLogo
+            logo.animate().rotationY(360f).setDuration(1500).alpha(0f).withEndAction{
+                logo.animate().setDuration(900).alpha(1f).withEndAction {
+                    findNavController().navigate(R.id.item_login)
+                }
+                }
         }
     }
 

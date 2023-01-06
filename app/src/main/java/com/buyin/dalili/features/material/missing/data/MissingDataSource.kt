@@ -22,10 +22,10 @@ class MissingDataSource @Inject constructor(private val firebaseDatabase: Fireba
 
             val chatList = ArrayList<MissingModel>()
             childrenNumber=data!!.children.count().toInt()
-            data?.children?.forEach { child ->
+            data.children.forEach { child ->
                 val missingModel = child.getValue(MissingModel::class.java)
                 chatList.add(missingModel!!)
-                            }
+            }
                         chatList
         }.catch {
 

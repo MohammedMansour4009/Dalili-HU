@@ -1,8 +1,13 @@
 package com.buyin.dalili.features.main.presentation
 
+import android.os.Build
 import android.os.Bundle
+import android.view.Window
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.navigation.NavController
 import androidx.navigation.NavOptions
@@ -30,17 +35,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         init()
-//        val navView:NavigationView=binding.navView
-//        navView.setNavigationItemSelectedListener {
-//            when(it.itemId){
-//                R.id.item_missing-> navController.navigate(binding.)
-//            }
-//            true
-//        }
-
-
     }
 
 
@@ -85,11 +80,6 @@ class MainActivity : AppCompatActivity() {
                     binding.appBar.isVisible = false
 
                 }
-//                R.id.item_college -> {
-//                    supportActionBar?.hide()
-//                    actionBar?.setDisplayHomeAsUpEnabled(false)
-//                    binding.appBar.isVisible = true
-//                }
                 else -> {
                     binding.bottomNav.isVisible = true
                     binding.appBar.isVisible = true

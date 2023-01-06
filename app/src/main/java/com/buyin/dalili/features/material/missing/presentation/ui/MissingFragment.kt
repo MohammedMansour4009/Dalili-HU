@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -59,17 +60,23 @@ class MissingFragment : Fragment() {
     private fun initListener() {
         binding.postId.setOnClickListener {
             Log.d("edit text = ", "initListener: ${binding.editTextId.text.toString()}")
-            if (!binding.editTextId.text.isNullOrBlank()) {
-                setMissing(binding.editTextId.text.toString())
-                binding.editTextId.text = null
+            if (!binding.editTextId.text.isNullOrBlank()&&!binding.phone.text.isNullOrBlank()) {
+                if(binding.phone.text.toString().toCharArray().size==10){
+                    setMissing(binding.editTextId.text.toString(),binding.phone.text.toString())
+                    binding.editTextId.text = null
+                }else{
+                    binding.textViewErrorPhone.visibility=View.VISIBLE
+                }
             }
         }
     }
 
-    fun setMissing(desc: String) {
+    private fun setMissing(desc: String,phone: String) {
         val database: DatabaseReference =
             Firebase.database.reference
                 .child("lost_item&room/lost_item/Missings/")
-        database.child("${++childrenNumber}").child("description").setValue(desc)
+        database.child("${childrenNumber+1}").child("description").setValue(desc)
+        database.child("${childrenNumber+1}").child("phone").setValue(phone)
+
     }
 }
