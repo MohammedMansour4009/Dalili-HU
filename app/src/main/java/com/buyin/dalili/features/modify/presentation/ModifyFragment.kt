@@ -66,6 +66,7 @@ class ModifyFragment : Fragment() {
                         binding.editTextUniversity.text.toString(),
                         binding.editTextNewPassword.text.toString()
                     )
+                    findNavController().popBackStack(R.id.item_modify, true);
                     findNavController().navigate(R.id.item_college)
 
                 } else {

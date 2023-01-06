@@ -24,6 +24,7 @@ class SplashFragment : Fragment() {
             var logo=binding.imageViewLogo
             logo.animate().rotationY(360f).setDuration(1500).alpha(0f).withEndAction{
                 logo.animate().setDuration(900).alpha(1f).withEndAction {
+                    findNavController().popBackStack(R.id.item_splash, true);
                     findNavController().navigate(R.id.item_login)
                 }
                 }

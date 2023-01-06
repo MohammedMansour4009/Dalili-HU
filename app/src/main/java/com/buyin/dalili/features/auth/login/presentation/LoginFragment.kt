@@ -89,6 +89,7 @@ class LoginFragment : Fragment() {
                 users.forEach {
                     if (it.university_id == account.university_id) {
                         if (it.password == account.password) {
+                            findNavController().popBackStack(R.id.item_login, true);
                             findNavController().navigate(R.id.item_college)
                             saveUserInfo(it, "student")
                         } else {

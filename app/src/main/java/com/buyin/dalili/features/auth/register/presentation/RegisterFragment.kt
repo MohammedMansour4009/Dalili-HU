@@ -96,6 +96,7 @@ class RegisterFragment : Fragment() {
 
                     } else {
                         saveUserInfo(account)
+                        findNavController().popBackStack(R.id.item_register, true);
                         findNavController().navigate(R.id.item_college)
                     }
                 }
