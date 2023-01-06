@@ -1,6 +1,6 @@
-package com.buyin.dalili.features.material.missing.data
+package com.buyin.dalili.features.missing.data
 
-import com.buyin.dalili.features.material.missing.domain.model.MissingModel
+import com.buyin.dalili.features.missing.domain.model.MissingModel
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 import javax.inject.Singleton

@@ -14,7 +14,6 @@
 
 
     </style>
-
     <style name="AppTheme.Button" parent="Theme.AppCompat.DayNight.DarkActionBar">
         <item name="colorButtonNormal">@color/white</item>
         <item name="colorPrimary">@color/primary</item>

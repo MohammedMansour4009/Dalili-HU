@@ -1,7 +1,7 @@
-package com.buyin.dalili.features.material.missing.data
+package com.buyin.dalili.features.missing.data
 import android.util.Log
 import com.buyin.dalili.core.common.queryObserveChildEvent
-import com.buyin.dalili.features.material.missing.domain.model.MissingModel
+import com.buyin.dalili.features.missing.domain.model.MissingModel
 import com.google.firebase.database.*
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch

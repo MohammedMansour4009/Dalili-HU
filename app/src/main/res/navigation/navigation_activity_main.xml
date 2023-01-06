@@ -54,20 +54,22 @@
         android:label="Students Room" />
 
 
-    <fragment
-        android:id="@+id/item_chat"
-        android:name="com.buyin.dalili.features.chat.presentation.ui.ChatFragment"
-        android:label="Students Room" />
+  <fragment
+      android:id="@+id/item_chat"
+      android:name="com.buyin.dalili.features.chat.presentation.ui.ChatFragment"
+      android:label="Students Room" />
 
   <fragment
       android:id="@+id/missing_items"
-      android:name="com.buyin.dalili.features.material.missing.presentation.ui.MissingFragment"
+      android:name="com.buyin.dalili.features.missing.presentation.ui.MissingFragment"
       android:label="MissingFragment" />
-
+  <fragment
+      android:id="@+id/item_modify"
+      android:name="com.buyin.dalili.features.modify.presentation.ModifyFragment"
+      android:label="Modify Account" />
   <fragment
       android:id="@+id/items_permission"
       android:name="com.buyin.dalili.features.permission.presentation.ui.PermissionFragment"
       android:label="Permission Fragment" />
-
 
 </navigation>
