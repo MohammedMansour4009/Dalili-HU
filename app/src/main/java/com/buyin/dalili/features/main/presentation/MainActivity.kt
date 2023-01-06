@@ -3,6 +3,7 @@ package com.buyin.dalili.features.main.presentation
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
 import androidx.core.view.isVisible
 import androidx.navigation.NavController
 import androidx.navigation.NavOptions
@@ -30,17 +31,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         init()
-//        val navView:NavigationView=binding.navView
-//        navView.setNavigationItemSelectedListener {
-//            when(it.itemId){
-//                R.id.item_missing-> navController.navigate(binding.)
-//            }
-//            true
-//        }
-
-
     }
 
 
@@ -49,6 +40,13 @@ class MainActivity : AppCompatActivity() {
         setToolbar()
         setupNavBottom()
         setNavBottomAndDrawerNav()
+        initListener()
+    }
+
+    private fun initListener() {
+        binding.toolbarMain.setNavigationOnClickListener {
+            openDrawer()
+        }
     }
 
     private fun setNavBottomAndDrawerNav() {
@@ -75,6 +73,17 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(this, navController, appBarConfiguration)
     }
 
+
+
+    fun openDrawer() {
+        val drawer = binding.drawerLayout
+        drawer.openDrawer(GravityCompat.START)
+    }
+
+    private fun hideDrawer() {
+        val drawer = binding.drawerLayout
+        drawer.close()
+    }
 
     private fun setupNavBottom() {
         navController.addOnDestinationChangedListener { _, destination, _ ->

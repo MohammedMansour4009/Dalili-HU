@@ -72,6 +72,7 @@ class RegisterFragment : Fragment() {
                     name = binding.editTextAdName.text.toString(),
                     password = binding.editTextPassword.text.toString(),
                     university_id = binding.editTextUniversity.text.toString(),
+
                 )
                 var isUserExist = false
                 var isTeacherExist = false
@@ -89,6 +90,12 @@ class RegisterFragment : Fragment() {
                 }
 
             }
+        }
+
+        binding.textViewSkip.setOnClickListener {
+            findNavController().navigate(
+                R.id.item_college
+            )
         }
     }
 

@@ -90,7 +90,7 @@ class LoginFragment : Fragment() {
                     if (it.university_id == account.university_id) {
                         if (it.password == account.password) {
                             findNavController().navigate(R.id.item_college)
-                            saveUserInfo(it.university_id)
+                            saveUserInfo(it.university_id,it.name)
                         } else {
                             Toast.makeText(requireContext(), "password invalid", Toast.LENGTH_SHORT)
                                 .show()
@@ -119,12 +119,13 @@ class LoginFragment : Fragment() {
 
     }
 
-    private fun saveUserInfo(universityId: String?) {
+    private fun saveUserInfo(universityId: String?, name: String?) {
         val APP_PREF = "appPre"
         val preferences: SharedPreferences =
             requireContext().getSharedPreferences(APP_PREF, Context.MODE_PRIVATE)
 
         preferences.edit().putString("universityId", universityId).apply()
+        preferences.edit().putString("name", name).apply()
     }
 
     private fun isAllValid(): Boolean {

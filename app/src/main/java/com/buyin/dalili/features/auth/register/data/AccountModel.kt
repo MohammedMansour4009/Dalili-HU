@@ -6,6 +6,9 @@ data class AccountModel(
 
     val password: String? = null,
 
-    val university_id: String? = null
+    val university_id: String? = null,
+
+    val isTeacher: Boolean = false
+
 
 )

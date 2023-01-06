@@ -53,9 +53,9 @@ class CreateRoomDialog(val list: List<StudentsRoomModel>) : AppCompatDialogFragm
                     StudentsRoomModel(
                         list.size,
                         binding.etRoomName.text.toString(),
-                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4wIN75npnIJ0Fwkj7ktspH0hpQToFjl8kMw&usqp=CAU",
+                        getImages(list.size),
                         "Creator By " + binding.etCreator.text.toString(),
-                        preferences.getString("universityId","test")
+                        preferences.getString("universityId", "test")
                     )
                 )
                 dismiss()
@@ -63,6 +63,18 @@ class CreateRoomDialog(val list: List<StudentsRoomModel>) : AppCompatDialogFragm
         }
     }
 
+    private fun getImages(number: Int): String {
+        return when (number) {
+            1 -> "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL8M2O7r8WlHJzPxHkaaDDzbE2nnD9ITHXOw&usqp=CAU"
+            2 -> "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPxjsJk1Qr5TYGpwZtVVVtW5k8b_1R9se6jg&usqp=CAU"
+            3 -> "https://media.istockphoto.com/id/1007454868/vector/teacher-with-students-icon.jpg?s=612x612&w=0&k=20&c=-RVY5PaR5rQ8c0kyeYXZPkCVedPmPzZEP-RhMGQe3d8="
+            4 -> "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4wIN75npnIJ0Fwkj7ktspH0hpQToFjl8kMw&usqp=CAU"
+            5 -> "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPUC9mF0spLPVz5QKJqAFdZiOvFXdmrh_lSqNy6IosYYmmLsPU0I5UxRnO7wmkO5yfqzc&usqp=CAU"
+            else -> {
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4wIN75npnIJ0Fwkj7ktspH0hpQToFjl8kMw&usqp=CAU"
+            }
+        }
+    }
 }
 
 
