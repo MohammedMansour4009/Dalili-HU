@@ -23,9 +23,7 @@ class SplashFragment : Fragment() {
         super.onCreate(savedInstanceState)
         lifecycleScope.launch {
             delay(2000)
-//            binding.progressBar.isVisible = false
-//            binding.imageViewCheck.isVisible = true
-//            binding.imageViewCircleCheck.isVisible = true
+
             var logo=binding.imageViewLogo
             logo.animate().rotationY(360f).setDuration(1500).alpha(0f).withEndAction{
                 logo.animate().setDuration(900).alpha(1f).withEndAction {
