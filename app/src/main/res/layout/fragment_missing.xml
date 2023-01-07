@@ -68,7 +68,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/phone"
                     android:layout_width="100dp"
-                    android:layout_height="15dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
                     android:layout_marginBottom="16dp"
                     android:background="@color/white"

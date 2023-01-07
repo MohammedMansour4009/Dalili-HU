@@ -10,8 +10,8 @@ class CoursesRepository @Inject constructor(
     private val coursesDataSource: CoursesDataSource,
 
     ) {
-   fun getCourses(): Flow<List<CoursesModel>> {
-        return coursesDataSource.getCourses()
+   fun getCourses(id: String): Flow<List<CoursesModel>> {
+        return coursesDataSource.getCourses(id)
     }
 }
 

@@ -17,14 +17,18 @@ class CoursesViewModel @Inject constructor(
     var successGetSourcesLiveData: LiveData<List<CoursesModel>> = _successGetCoursesLiveData
 
     init {
-            viewModelScope.launch {
-                try {
-                    Log.d("TAG000", "getCollege")
-                    successGetSourcesLiveData =
-                        getCoursesUseCase().asLiveData(viewModelScope.coroutineContext)
-                } catch (e: Exception) {
-                    Log.d("TAG000", e.message ?: "")
-                }
+
+    }
+
+    fun getCourses(id : String) {
+        viewModelScope.launch {
+            try {
+                Log.d("TAG000", "getCollege")
+                successGetSourcesLiveData =
+                    getCoursesUseCase(id).asLiveData(viewModelScope.coroutineContext)
+            } catch (e: Exception) {
+                Log.d("TAG000", e.message ?: "")
             }
+        }
     }
 }

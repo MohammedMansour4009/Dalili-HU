@@ -21,6 +21,11 @@ class CoursesFragment : Fragment() {
 
     private val viewModel: CoursesViewModel by viewModels()
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel.getCourses(arguments?.getInt("id").toString())
+
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,

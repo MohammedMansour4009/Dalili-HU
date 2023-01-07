@@ -10,8 +10,8 @@ class GetCoursesUseCase @Inject constructor(
     private val repository: CoursesRepository
 ) {
 
-    operator fun invoke(): Flow<List<CoursesModel>> {
-        return repository.getCourses()
+    operator fun invoke(id: String): Flow<List<CoursesModel>> {
+        return repository.getCourses(id)
     }
 
 }

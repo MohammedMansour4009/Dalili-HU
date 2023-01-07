@@ -16,9 +16,9 @@ class CoursesDataSource @Inject constructor(
     private val firebaseDatabase: FirebaseDatabase,
 ) {
 
-    fun getCourses(): Flow<List<CoursesModel>> {
+    fun getCourses(id: String): Flow<List<CoursesModel>> {
         val query: Query = firebaseDatabase.reference
-            .child("feature/material/hu/10/courses")
+            .child("feature/material/hu/$id/courses")
         Log.d("TAG000", "init Query ")
 
         query.get()

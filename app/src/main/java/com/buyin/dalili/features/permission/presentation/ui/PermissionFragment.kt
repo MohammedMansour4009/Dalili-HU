@@ -49,8 +49,10 @@ class PermissionFragment : Fragment() {
             viewModel.successGetPermissionLiveData.collect {
                 binding.isRequest = it
                 delay(2000)
-                if (it)
+                if (it) {
+                    findNavController().popBackStack(R.id.items_permission, true)
                     findNavController().navigate(R.id.item_college)
+                }
             }
         }
 

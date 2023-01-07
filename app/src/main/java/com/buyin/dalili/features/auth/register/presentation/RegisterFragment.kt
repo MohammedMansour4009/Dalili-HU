@@ -142,6 +142,7 @@ class RegisterFragment : Fragment() {
         preferences.edit().putString("name", model.name).apply()
         preferences.edit().putBoolean("isTeacher", binding.checkboxIsTeacher.isChecked).apply()
         preferences.edit().putString("userType", if(binding.checkboxIsTeacher.isChecked)"teacher" else "student").apply()
+        preferences.edit().putString("password", model.password).apply()
     }
 
     private fun onCilkButtonRegister() {

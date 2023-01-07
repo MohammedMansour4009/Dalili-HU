@@ -2,15 +2,11 @@ package com.buyin.dalili.features.main.presentation
 
 import android.content.Context
 import android.content.SharedPreferences
-import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.core.view.isVisible
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import androidx.navigation.NavController
-import androidx.navigation.NavOptions
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -19,9 +15,6 @@ import androidx.navigation.ui.NavigationUI.setupWithNavController
 import com.buyin.dalili.R
 import com.buyin.dalili.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
-import com.buyin.dalili.databinding.FragmentCollegeBinding
-import com.buyin.dalili.features.auth.login.presentation.LoginFragment
-import kotlin.math.log
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -104,20 +97,39 @@ class MainActivity : AppCompatActivity() {
                     supportActionBar?.hide()
                     binding.bottomNav.isVisible = false
                     binding.appBar.isVisible = false
-
                 }
-                R.id.item_login ->{
+                R.id.item_login -> {
                     supportActionBar?.hide()
                     binding.bottomNav.isVisible = false
                     binding.appBar.isVisible = false
                     preferences.edit().clear().apply()
                 }
-                R.id.items_permission->{
-                    binding.toolbarMain.isVisible  = false
-                    binding.bottomNav.isVisible  = false
+                R.id.items_permission -> {
+                    binding.toolbarMain.isVisible = false
+                    binding.bottomNav.isVisible = false
+                }
+                R.id.item_bot -> {
+                    binding.tvFullName.text = "Bot"
+                }
+                R.id.missing_items -> {
+                    binding.tvFullName.text = "Lost Item"
+                }
+                R.id.item_map -> {
+                    binding.tvFullName.text = "Map"
+                }
+                R.id.item_study_room -> {
+                    binding.tvFullName.text = "Study Room"
+                }
+                R.id.item_college -> {
+                    binding.tvFullName.text = "College"
+                    binding.toolbarMain.isVisible = true
+                    binding.bottomNav.isVisible = true
+                    binding.appBar.isVisible = true
+                    supportActionBar?.hide()
+
                 }
                 else -> {
-                    binding.toolbarMain.isVisible  = true
+                    binding.toolbarMain.isVisible = true
                     binding.bottomNav.isVisible = true
                     binding.appBar.isVisible = true
                     supportActionBar?.hide()
