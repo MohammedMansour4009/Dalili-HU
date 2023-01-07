@@ -15,7 +15,7 @@ class MissingDataSource @Inject constructor(private val firebaseDatabase: Fireba
     fun getMissing(): Flow<List<MissingModel>> {
         val query: Query = firebaseDatabase.reference
             .child(
-                    "lost_item&room/lost_item/Missings/")
+                    "feature/lost/hu/")
         query.get()
 
         return query.queryObserveChildEvent().map { data ->

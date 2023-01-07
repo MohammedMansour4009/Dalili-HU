@@ -58,7 +58,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="top"
-            android:text="1933345"
             android:nextFocusDown="@+id/edit_text_phone" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -96,7 +95,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="top"
-            android:text="0795670069"
             android:inputType="numberPassword"
             android:nextFocusDown="@+id/edit_text_phone" />
     </com.google.android.material.textfield.TextInputLayout>

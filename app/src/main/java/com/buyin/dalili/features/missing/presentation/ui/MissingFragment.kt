@@ -89,7 +89,7 @@ class MissingFragment : Fragment() {
     private fun setMissing(desc: String,phone: String) {
         val database: DatabaseReference =
             Firebase.database.reference
-                .child("lost_item&room/lost_item/Missings/")
+                .child("feature/lost/hu/")
         database.child("${childrenNumber+1}").child("description").setValue(desc)
         database.child("${childrenNumber+1}").child("phone").setValue(phone)
 

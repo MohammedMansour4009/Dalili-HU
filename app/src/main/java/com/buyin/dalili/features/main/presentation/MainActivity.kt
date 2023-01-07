@@ -2,11 +2,15 @@ package com.buyin.dalili.features.main.presentation
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.navigation.NavController
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -16,6 +20,7 @@ import com.buyin.dalili.R
 import com.buyin.dalili.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 import com.buyin.dalili.databinding.FragmentCollegeBinding
+import com.buyin.dalili.features.auth.login.presentation.LoginFragment
 import kotlin.math.log
 
 @AndroidEntryPoint
@@ -41,16 +46,8 @@ class MainActivity : AppCompatActivity() {
         setupNavBottom()
         setNavBottomAndDrawerNav()
         initListener()
-        checkSession()
     }
 
-    private fun checkSession() {
-        preferences =
-            getSharedPreferences("appPre", Context.MODE_PRIVATE)
-        if (!preferences.getString("name","").isNullOrBlank()){
-            navController.navigate(R.id.item_college)
-        }
-    }
 
     private fun initListener() {
         binding.toolbarMain.setNavigationOnClickListener {
@@ -98,7 +95,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupNavBottom() {
+        preferences =
+            getSharedPreferences("appPre", Context.MODE_PRIVATE)
         navController.addOnDestinationChangedListener { _, destination, _ ->
+
             when (destination.id) {
                 R.id.item_register, R.id.item_splash -> {
                     supportActionBar?.hide()
@@ -116,7 +116,6 @@ class MainActivity : AppCompatActivity() {
                     binding.toolbarMain.isVisible  = false
                     binding.bottomNav.isVisible  = false
                 }
-
                 else -> {
                     binding.toolbarMain.isVisible  = true
                     binding.bottomNav.isVisible = true
@@ -126,6 +125,5 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-
     }
 }

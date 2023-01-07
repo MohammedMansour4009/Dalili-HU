@@ -141,10 +141,12 @@ class RegisterFragment : Fragment() {
         preferences.edit().putString("universityId", model.university_id).apply()
         preferences.edit().putString("name", model.name).apply()
         preferences.edit().putBoolean("isTeacher", binding.checkboxIsTeacher.isChecked).apply()
+        preferences.edit().putString("userType", if(binding.checkboxIsTeacher.isChecked)"teacher" else "student").apply()
     }
 
     private fun onCilkButtonRegister() {
         binding.buttonRegister.setOnClickListener {
+            findNavController().popBackStack(R.id.item_register, true);
             findNavController().navigate(
                 R.id.item_college
             )

@@ -85,18 +85,21 @@ class LoginFragment : Fragment() {
 //                        isTeacherExist = true
 //                    }
 //                }
-
-                users.forEach {
-                    if (it.university_id == account.university_id) {
-                        if (it.password == account.password) {
-                            findNavController().popBackStack(R.id.item_login, true);
-                            findNavController().navigate(R.id.item_college)
-                            saveUserInfo(it, "student")
-                        } else {
-                            Toast.makeText(requireContext(), "password invalid", Toast.LENGTH_SHORT)
-                                .show()
+                run breaking@{
+                    users.forEach {
+                        if (it.university_id == account.university_id) {
+                            if (it.password == account.password) {
+                                findNavController().popBackStack(R.id.item_login, true);
+                                findNavController().navigate(R.id.item_college)
+                                saveUserInfo(it, "student")
+                                return@breaking
+                            } else {
+                                Toast.makeText(requireContext(), "password invalid", Toast.LENGTH_SHORT)
+                                    .show()
+                            }
                         }
                     }
+
                 }
 
             }
