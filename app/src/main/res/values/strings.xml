@@ -9,5 +9,10 @@
     <string name="create_post">Create Post</string>
     <string name="permission_request_is_under_review">Permission request is under review</string>
     <string name="permission_request_accepted">Permission request accepted</string>
-
+    <string name="write_your_message">Write your message…</string>
+    <string name="helloMessage">مرحبا بك انا دليلي كيف يمكنني مساعدتك؟</string>
+    <string name="welcome_to_android_assistant_choose_the_topic_you_are_looking_for_or_write_it">Welcome to Android Assistant
+        Choose the topic you are looking for or write it</string>
+    <string name="demoText">Welcome to Android Assistant Choose the topic you are looking for or write it</string>
+    <string name="Higher_education_grants_and_loans">Higher education grants and loans</string>
 </resources>

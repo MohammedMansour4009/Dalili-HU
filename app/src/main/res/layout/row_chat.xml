@@ -76,6 +76,8 @@
                 android:text="@{model.postLink}"
                 android:textColor="@color/hint_color"
                 android:textSize="14sp"
+                android:autoLink="web"
+
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/image_view"
                 app:layout_constraintTop_toBottomOf="@id/text_view_description"

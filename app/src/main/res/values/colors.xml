@@ -9,6 +9,11 @@
     <color name="white">#FFFFFFFF</color>
     <color name="orange">#FF5722</color>
     <color name="green">#67EC6C</color>
+    <color name="whiteBlue">#60C3FF</color>
+    <color name="darkBlue">#5574F7</color>
+    <color name="blue">#00B3F6</color>
+    <color name="backround_blue">#91D4ED</color>
+    <color name="HintColor">#3C8FF7</color>
 
     <color name="hint_color">#8996A2</color>
 

@@ -71,5 +71,9 @@
       android:id="@+id/items_permission"
       android:name="com.buyin.dalili.features.permission.presentation.ui.PermissionFragment"
       android:label="Permission Fragment" />
+  <fragment
+      android:id="@+id/item_bot"
+      android:name="com.buyin.dalili.features.bot.presentation.ui.botFragment"
+      android:label="botFragment" />
 
 </navigation>
